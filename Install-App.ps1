@@ -11,12 +11,12 @@ if (Get-Module -ListAvailable -Name ps2exe) {
   }
 }
 
-ps2exe .\WeztermNeovimLauncher.ps1 ./output/WeztermNeovimLauncher.exe -noConsole -iconFile "./assets/Icon.ico" -longPaths `
+ps2exe "$PSScriptRoot/WeztermNeovimLauncher.ps1" "$PSScriptRoot/output/WeztermNeovimLauncher.exe" -noConsole -iconFile "$PSScriptRoot/assets/Icon.ico" -longPaths `
   -title "Wezterm Neovim Launcher" -description "An executable that opens files in Neovim within a WezTerm terminal instance."
 
-git clone https://github.com/deltoss/PsInstallTools.git ./temp/PsInstallTools
-Import-Module -Verbose "./temp/PsInstallTools"
-Install-FromFolder ./output/ "WeztermNeovimLauncher"
-Remove-Module -Verbose "./temp/PsInstallTools"
-Remove-Item -Path .\temp -Recurse -Force
+git clone https://github.com/deltoss/PsInstallTools.git "$PSScriptRoot/temp/PsInstallTools"
+Import-Module -Verbose "$PSScriptRoot/temp/PsInstallTools"
+Install-FromFolder "$PSScriptRoot/output/" "WeztermNeovimLauncher"
+Remove-Module -Verbose "$PSScriptRoot/temp/PsInstallTools"
+Remove-Item -Path "$PSScriptRoot/temp" -Recurse -Force
 
