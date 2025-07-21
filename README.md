@@ -17,10 +17,16 @@ This launcher acts as a bridge between Windows file associations and your prefer
 - nvim
 - wezterm
 
-## Publish Command
+## Manual Installation
 
 ```powershell
-./Install-App.ps1
+$targetTempPath = "$Env:TEMP/WeztermNvimLauncher"
+if (Test-Path $targetTempPath) {
+    Remove-Item -Path $targetTempPath -Recurse -Force
+}
+git clone git@github.com:deltoss/WeztermNvimLauncher.git $targetTempPath
+& "$Env:TEMP/WeztermNvimLauncher/Install-App.ps1"
+Remove-Item -Path $targetTempPath -Recurse -Force
 ```
 
 # How to Change Default Apps on Windows
