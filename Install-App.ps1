@@ -17,6 +17,6 @@ ps2exe "$PSScriptRoot/WeztermNeovimLauncher.ps1" "$PSScriptRoot/output/WeztermNe
 git clone https://github.com/deltoss/PsInstallTools.git "$PSScriptRoot/temp/PsInstallTools"
 Import-Module -Verbose "$PSScriptRoot/temp/PsInstallTools"
 Install-FromFolder "$PSScriptRoot/output/" "WeztermNeovimLauncher"
-Remove-Module -Verbose "$PSScriptRoot/temp/PsInstallTools"
+Remove-Module -Verbose "PsInstallTools"
 Remove-Item -Path "$PSScriptRoot/temp" -Recurse -Force
 
