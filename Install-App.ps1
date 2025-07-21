@@ -13,6 +13,7 @@ if (Get-Module -ListAvailable -Name ps2exe) {
   }
 }
 
+New-Item -Path "$scriptDir/output" -ItemType Directory -Force
 ps2exe "$scriptDir/WeztermNeovimLauncher.ps1" "$scriptDir/output/WeztermNeovimLauncher.exe" -noConsole -iconFile "$scriptDir/assets/Icon.ico" -longPaths `
   -title "Wezterm Neovim Launcher" -description "An executable that opens files in Neovim within a WezTerm terminal instance."
 
