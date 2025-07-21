@@ -36,7 +36,7 @@ Remove-Item -Path $targetTempPath -Recurse -Force
 4. Find `Notepad`
 5. Click on a file type you want associated.
 6. Scroll down on the bottom and click **"Choose an app on your PC"**
-7. Navigate to `/publish/WeztermNvimLauncher.exe`
+7. Navigate to the installed executable at `%LOCALAPPDATA%\Programs\WeztermNeovimLauncher\WeztermNeovimLauncher.exe`
 8. Click on **"Set default"**
 9. Repeat step 5-8 for each file association.
 
